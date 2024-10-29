@@ -1,0 +1,184 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.svg-map {
+  width: 70% !important;
+  padding:5%;
+}
+
+.centermap{
+    margin: auto;
+    width: 100%;
+    border: 3px solid green;
+    padding: 10px;
+    display: inline-flex;
+}
+.svg-statemap{
+  
+  margin-top:20%;
+  margin-left: 10%; 
+}
+.state-container{
+  width:400px;
+  height:400px;
+}
+.india-map{
+  width:50%;
+}
+.navbar-span{
+  height:50px;
+  display: block;
+  background-color: #f4bc44;
+  text-align: center;
+  margin-top: 10p;
+  padding-top: 2%;
+  font-size: larger;
+}
+
+table {
+  margin: 0 auto;
+}
+
+table {
+  color: #333;
+  background: white;
+  border: 1px solid grey;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+table thead th,
+table tfoot th {
+  color: #a32323;
+  background: rgba(0,0,0,.1);
+}
+table caption {
+  padding:.5em;
+}
+table th,
+table td {
+  padding: .5em;
+  border: 1px solid lightgrey;
+}
+
+[data-table-theme*=zebra] tbody tr:nth-of-type(odd) {
+  background: rgba(0,0,0,.05);
+}
+[data-table-theme*=zebra][data-table-theme*=dark] tbody tr:nth-of-type(odd) {
+  background: rgba(255,255,255,.05);
+}
+
+[data-table-theme*=dark] {
+  color: #ddd;
+  background: #333;
+  font-size: 12pt;
+  border-collapse: collapse;
+}
+[data-table-theme*=dark] thead th,
+[data-table-theme*=dark] tfoot th {
+  color: #aaa;
+  background: rgba(0255,255,255,.15);
+}
+[data-table-theme*=dark] caption {
+  padding:.5em;
+}
+[data-table-theme*=dark] th,
+[data-table-theme*=dark] td {
+  padding: .5em;
+  border: 1px solid grey;
+}
+
+.svg-map{
+  width: 100%;
+	height: auto;
+	stroke: #666;
+	stroke-width: 1;
+	stroke-linecap: round;
+	stroke-linejoin: round;
+}
+
+	.svg-location {
+    fill: #a1d99b;
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        fill: #b8e2b3;
+        outline: 0;
+      }
+
+      &[aria-checked=true] {
+        fill: #a1d99b;
+      }
+  }
+
+  .svg-location-max {
+    fill:rgb(214, 39, 39);
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        fill: #b8e2b3;
+        outline: 0;
+      }
+
+      &[aria-checked=true] {
+        fill: rgb(214, 39, 39);
+      }
+  }
+
+  .svg-location-above-avg {
+    fill:rgb(240, 101, 101);
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        fill: #b8e2b3;
+        outline: 0;
+      }
+
+      &[aria-checked=true] {
+        fill: rgb(240, 101, 101);
+      }
+  }
+
+  .svg-location-belowavg {
+    fill:rgb(239, 222, 24);
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        fill: #b8e2b3;
+        outline: 0;
+      }
+
+      &[aria-checked=true] {
+        fill: rgb(239, 222, 24);
+      }
+  }
+
+  .svg-location-low {
+    fill:rgb(99, 239, 116);
+      cursor: pointer;
+
+      &:focus,
+      &:hover {
+        fill: #b8e2b3;
+        outline: 0;
+      }
+
+      &[aria-checked=true] {
+        fill: rgb(99, 239, 116);
+      }
+  }
