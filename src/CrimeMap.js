@@ -18,24 +18,26 @@ const CrimeMap = () => {
     const [selectedStateStyle, setSelectedStateStyle] = useState([]);
     const mapSvg = useRef(null);
     const getTotalInfo = async () => {
-    const { data } = await axios.get(
-        "crimelist"
-    );
-    setAllInfo(data);
-    onFindAverageData();
+        const { data } = await axios.get(
+            "crimelist"
+        );
+        setAllInfo(data);
+        onFindAverageData(data);        
     };
     
     useEffect(() => {
         getTotalInfo();
+        
       }, []);
 
-    const onFindAverageData = () =>{
+    const onFindAverageData = (data) =>{
         let totalCrime = 0
         let averageCrime;
         const statesTotalCrime = [];
         let heapData = [];
+        
         states.forEach(function(item, index){
-            let stateTotalList = getAllInfo.filter((stateList) => stateList['state'] === states[index])
+            let stateTotalList = data.filter((stateList) => stateList['state'] === states[index])
            let sum = stateTotalList.reduce(function (x, y) {
                 return x + y.Rape + y.KA + y.AoM + y.AoW + y.DD + y.DV + y.WT;
             }, 0);
@@ -43,6 +45,7 @@ const CrimeMap = () => {
             statesTotalCrime.push({state :states[index],total:sum,style:""})
             // console.log(totalCrime);
         })
+        console.log(statesTotalCrime);
         const maxArray = statesTotalCrime.map(ele => ele.total);        
         averageCrime = Math.round(totalCrime / 34);        
         heapData ={
@@ -70,6 +73,7 @@ const CrimeMap = () => {
                 }
             }
         }
+        // console.log(statesTotalCrime);
         mapSvg.current.locations.forEach(function(svgEle,index){
             for(const item of statesTotalCrime){
                 if(svgEle.getAttribute('name') === item.state){
@@ -83,6 +87,7 @@ const CrimeMap = () => {
     const onLocationClick = (location) => {        
         setselectedState(stategeo.filter((stateList) => stateList['name'] === location.getAttribute("name")));
         setStateName(location.getAttribute("name"));
+        // console.log(stateName);
         setSelectedStateStyle(location.getAttribute("class"));
         let selectedStateData = getAllInfo.filter((stateDetails) => stateDetails['state'] === location.getAttribute("name"));
          let stateData = [{
